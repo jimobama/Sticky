@@ -1,0 +1,114 @@
+
+<html lang='en'>
+
+<head>
+<meta charset="UTF-8" >
+<script type="text/javascript" src="sticky.js">
+</script>
+
+<script>
+window.onload=(function()
+{
+      Sticky("what").sticky.addClass("touch").sticky.addClass("four");
+     
+})
+</script>
+
+<style>
+
+.body
+{
+	height:4000px;
+}
+
+.touch
+{
+	border:1px solid red;
+	display:block;
+    width:100%;
+    color:#fff;
+}
+.four{
+	top:0px;
+	padding:50px;
+	background-color:#000;
+	opacity:0.7;
+	display:block;
+}
+</style>
+</head>
+
+
+<body>
+
+<div class='body'>
+
+In This Article
+
+    General info
+    Properties
+    Example
+            Scroll optimization with window.requestAnimationFrame
+    Browser compatibility
+        iOS UIWebView
+
+The scroll event is fired when the document view or an element has been scrolled.
+General infoEdit
+
+Specification
+    DOM L3, CSSOM View
+Interface
+    UIEvent
+Bubbles
+    Not on elements, but bubbles to the default view when fired on the document
+Cancelable
+    No
+Target
+    defaultView, Document, Element
+Default Action
+    None
+
+PropertiesEdit
+
+Property 	Type 	Description
+target Read only 	EventTarget 	The event target (the topmost target in the DOM tree).
+type Read only 	DOMString 	The type of event.
+bubbles Read only 	Boolean 	Whether the event normally bubbles or not
+cancelable Read only 	Boolean 	Whether the event is cancellable or not?
+view Read only 	WindowProxy 	document.defaultView (window of the document)
+detail Read only 	long (float) 	0.
+
+ExampleEdit
+
+Since scroll events can fire at a high rate, the event handler shouldn't execute computationally expensive operations such as DOM modifications. Instead, it is recommended to throttle the event using requestAnimationFrame, setTimeout or customEvent, as follows:
+Scroll optimization with window.requestAnimationFrame
+
+// Reference: http://www.html5rocks.com/en/tutorials/speed/animations/
+
+var last_known_scroll_position = 0;
+var ticking = false;
+
+function doSomething(scroll_pos) {
+  // do something with the scroll position
+}
+
+window.addEventListener('scroll', function(e) {
+  last_known_scroll_position = window.scrollY;
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      doSomething(last_known_scroll_position);
+      ticking = false;
+    });
+  }
+  ticking = true;
+});
+	  <div class='header' id='what'>
+             Tis is the header I am 
+
+	  </div>
+</div>
+</body>
+
+
+
+</html>
