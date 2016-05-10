@@ -69,6 +69,7 @@ var Sticky =(function(element)
  	if(yScroll >= 0){  	  	
  		if(rect.top <=0){
  			this.element.style.position="fixed";
+ 			this.element.style.zIndex="1";
  			this.sticked=true; 
  			addSticky();
  		}
@@ -76,6 +77,7 @@ var Sticky =(function(element)
     //check if finished scrolling
     if(this.scrollAmount <= 0  && this.sticked==true){     
     	this.element.style.position="";
+    	this.element.style.zIndex="";
     	this.sticked=false;       
     	removeSticky();
     }
