@@ -8,13 +8,13 @@
 
 */
 
-var Sticky =(function(element)
+var Sticky =(function(elementOrId)
 {
 	this.initTop=0;
-	if(this.element instanceof HTMLElement){
-		this.element= element;	
-	}else if(typeof element =="string"){
-		this.element = document.getElementById(element);
+	if(elementOrId instanceof HTMLElement){
+		this.element= elementOrId;	
+	}else if(typeof elementOrId =="string"){
+		this.element = document.getElementById(elementOrId);
 	}
 	if(!this.element) throw new Error("No Element with the given id exist");
 	var scrollInit = window.scrollY || window.pageYOffset;
