@@ -1,5 +1,5 @@
 
-The sticky is a free and light weight Pure JavaScript. It monitor the window scroll event and always make such attached element
+The sticky is a free and light weight Pure JavaScript library. It monitor the window scroll event and always make such attached element
 is kept visible during vertical scroll of the window.
 
 The text.html desmostrate and a good example of the library. 
