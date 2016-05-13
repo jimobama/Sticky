@@ -1,0 +1,26 @@
+
+The sticky is a free and light weight Pure JavaScript. It monitor the window scroll event and always make such attached element
+is kept visible during vertical scroll of the window.
+
+The text.html desmostrate and a good example of the library. 
+
+
+The module is simple and easy to use , its designed with the fluent and module  design Pattern.
+
+How to used it.
+
+Sticky("element_id").start();
+
+#The Module also provided addition method to help programmer have full control , for example.
+Adding a Css class to the element when ever the element is about to stick
+
+Sticky("element_id").addCssClass("classname").start();
+
+//Forthermore, more than one css class can be added to the Sticky element.
+
+Sticky("element_id").addCssClass("classname1").addCssClass("classname2")....start();
+
+
+Installation
+
+Its a pure javascript library , user can download and add the library path with the HTML  script tag.
